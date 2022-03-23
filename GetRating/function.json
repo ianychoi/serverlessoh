@@ -18,7 +18,7 @@
       "connectionStringSetting": "AzureCosmosDBConnectionString",
       "direction": "in",
       "Id": "{Query.ratingId}",
-      "PartitionKey": "{Query.partitionKeyValue}"
+      "PartitionKey": "{Query.ratingId}"
     },
     {
       "type": "http",
