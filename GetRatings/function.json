@@ -1,0 +1,29 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    {
+      "type": "cosmosDB",
+      "name": "ratings",
+      "databaseName": "IceCreamRatingsDB",
+      "collectionName": "icecreamratings",
+      "connectionStringSetting": "AzureCosmosDBConnectionString",
+      "direction": "in",
+      "sqlQuery": "SELECT * from c where c.userId = {userId}"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "$return"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get"
+      ]
+    },
+    {
+      "type": "cosmosDB",
+      "name": "ratings",
+      "databaseName": "IceCreamRatingsDB",
+      "collectionName": "icecreamratings",
+      "connectionStringSetting": "AzureCosmosDBConnectionString",
+      "direction": "in",
+      "Id": "{Query.ratingId}",
+      "PartitionKey": "{Query.partitionKeyValue}"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "$return"
+    }
+  ]
+}
